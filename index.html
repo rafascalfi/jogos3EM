@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal de Jogos & Projetos - 3º EM | SESI SENAI</title>
+  <meta name="description" content="Vitrine online dos projetos de jogos digitais, simulação industrial, automação e segurança desenvolvidos pela turma do 3º ano do Ensino Médio.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+</head>
+<body>
+
+  <!-- Barra de Navegação -->
+  <header class="site-header">
+    <div class="container nav-content">
+      <div class="brand-wrapper">
+        <div class="brand-icon" style="font-size: 1.6rem; background: rgba(2, 132, 199, 0.15); border: 1px solid var(--border-color); width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-sm);">🎮</div>
+        <div class="brand-text">
+          <h1>Jogos 3º EM <span class="badge-tag">Terceirão 2026</span></h1>
+          <p>Projetos Integradores de Desenvolvimento &amp; Engenharia</p>
+        </div>
+      </div>
+      
+      <nav class="nav-actions">
+        <a href="#jogos" class="nav-link">Catálogo de Jogos</a>
+        <a href="#arcade" class="nav-link">Mini-Simuladores</a>
+        <a href="#como-jogar" class="nav-link">Como Abrir / Jogar</a>
+        <a href="#jogos" class="btn-primary-sm">
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          Explorar Projetos
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-glow"></div>
+    <div class="container hero-content">
+      <div class="hero-pill">
+        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+        Mostra Tecnológica de Jogos Digitais e Automação
+      </div>
+      
+      <h2 class="hero-title">
+        Projetos de Jogos do <span>3º Ano EM</span>
+      </h2>
+      
+      <p class="hero-subtitle">
+        Jogue no navegador os projetos desenvolvidos pelos estudantes em <strong>GameMaker Studio</strong> e conheça o projeto em <strong>Unity 3D</strong>, com foco em automação industrial, segurança LOTO (NR-10/NR-12), usinagem CNC e eficiência energética.
+      </p>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-number">9</div>
+          <div class="stat-label">Projetos Concluídos</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">2</div>
+          <div class="stat-label">Game Engines (GM &amp; Unity)</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">8</div>
+          <div class="stat-label">Jogos HTML5 Online</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">2</div>
+          <div class="stat-label">Mini-Simuladores Web</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Principal de Jogos -->
+  <main class="container" id="jogos">
+    
+    <!-- Barra de Controle, Pesquisa e Filtros -->
+    <div class="control-bar">
+      <div class="search-box-wrapper">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" class="search-input" placeholder="Pesquisar por nome do jogo, tecnologia, tema ou norma (ex: AgroLock, CNC, Unity, LOTO, Esteiras)...">
+      </div>
+      
+      <div class="filter-tags">
+        <button class="filter-btn active" data-filter="all">Todos os Projetos (9)</button>
+        <button class="filter-btn" data-filter="automacao">⚙ Automação &amp; Esteiras</button>
+        <button class="filter-btn" data-filter="seguranca">🛡 Segurança &amp; LOTO</button>
+        <button class="filter-btn" data-filter="tycoon">⚡ Tycoon &amp; Energia</button>
+        <button class="filter-btn" data-filter="usinagem">🔧 Usinagem &amp; CNC</button>
+        <button class="filter-btn" data-filter="manutencao">🛠 Manutenção &amp; Gêmeo Digital</button>
+      </div>
+    </div>
+
+    <!-- Grade Dinâmica dos Jogos -->
+    <div class="games-grid" id="gamesGrid">
+      <!-- Inserido dinamicamente via JS -->
+    </div>
+
+    <!-- Seção de Arcade / Teste Web Interativo -->
+    <section class="arcade-section" id="arcade">
+      <div class="arcade-header">
+        <h2>🎮 Jogar Mini-Simuladores no Navegador</h2>
+        <p>Experimente abaixo dois desafios de lógica industrial inspirados nos projetos dos alunos, sem precisar instalar nada!</p>
+      </div>
+
+      <div class="arcade-tabs">
+        <button class="arcade-tab-btn active" data-arcade-mode="conveyor">
+          ⚙ Automação de Linha de Montagem (Estilo OMEGA / Factory)
+        </button>
+        <button class="arcade-tab-btn" data-arcade-mode="loto">
+          🛡 Desafio de Segurança LOTO (Estilo AgroLock)
+        </button>
+      </div>
+
+      <div class="arcade-screen-container">
+        <canvas id="arcadeCanvas"></canvas>
+        <div class="arcade-controls-bar">
+          <span style="color: var(--text-muted); font-size: 0.85rem;">
+            💡 <em>Dica: Interaja clicando diretamente na tela de simulação acima com o mouse!</em>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guia: Como Jogar / Como Executar -->
+    <section class="guide-section" id="como-jogar">
+      <div class="section-title-wrap">
+        <h2 class="section-title">Como Abrir e Jogar os Projetos</h2>
+        <p class="section-subtitle">Os oito projetos GameMaker podem ser jogados no navegador ou baixados; o projeto Unity continua disponível para Windows.</p>
+      </div>
+
+      <div class="guide-cards">
+        <div class="guide-card">
+          <div class="guide-card-icon">🎯</div>
+          <h3>Jogos GameMaker em HTML5</h3>
+          <ol>
+            <li>Escolha um dos oito projetos GameMaker no catálogo.</li>
+            <li>Clique em <strong>Jogar</strong>; o jogo será aberto em uma nova aba.</li>
+            <li>Aguarde o carregamento dos recursos e use os controles exibidos em <strong>Detalhes</strong>.</li>
+            <li>Para jogar online, não é necessário instalar o GameMaker.</li>
+            <li>Use <strong>Baixar</strong> para obter o projeto original e abri-lo no GameMaker.</li>
+          </ol>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-card-icon">⚡</div>
+          <h3>Jogos Windows Standalone (.exe)</h3>
+          <ol>
+            <li>Clique em <strong>Baixar</strong> no card do <strong>Wood Energy Tycoon</strong> para obter o instalador <span class="code-badge">WoodEnergyTycoon.exe</span>.</li>
+            <li>Dê duplo clique no instalador, escolha a pasta e clique em <strong>Instalar e jogar</strong>.</li>
+            <li>O instalador prepara os arquivos, cria atalhos e abre o jogo automaticamente; não é necessário descompactar.</li>
+            <li><em>Compatível com Windows 10/11 x64; não requer Unity instalado.</em></li>
+          </ol>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-card-icon">📘</div>
+          <h3>Competências Aplicadas (SESI / SENAI)</h3>
+          <ul>
+            <li><strong>NR-10 &amp; NR-12:</strong> Desenergização, testes de potencial zero e Lockout/Tagout.</li>
+            <li><strong>Automação &amp; Indústria 4.0:</strong> Roteamento de sensores, montadoras e esteiras.</li>
+            <li><strong>Usinagem CNC:</strong> Coordenadas X/Z, avanço milimétrico e velocidade de corte (Vc).</li>
+            <li><strong>Sustentabilidade:</strong> Matriz energética limpa a base de biomassa e solar.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé Institucional -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-school-info">
+        <div class="footer-text">
+          <h4>SESI SENAI • Ensino Médio Técnico</h4>
+          <p>Projetos de Jogos Digitais e Tecnologias Aplicadas à Indústria</p>
+        </div>
+      </div>
+      
+      <div style="text-align: right;">
+        <p>Desenvolvido para apresentação do 3º Ano do Ensino Médio • 2026</p>
+        <p style="color: var(--text-muted); font-size: 0.8rem;">Orientação Pedagógica e Técnica dos Instrutores Alexandre Souza, Heber Roberto, Rafael Scalfi.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Detalhes do Jogo -->
+  <div class="modal-overlay" id="gameModalOverlay">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Fechar modal">&times;</button>
+      
+      <div class="modal-banner-wrap">
+        <img src="" alt="Banner do Jogo" id="modalBannerImg" class="modal-banner-img">
+      </div>
+      
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-meta-row">
+            <span class="badge-tag" id="modalCategoryBadge">Categoria</span>
+            <span class="badge-tag" style="background: #10b981;" id="modalEngineBadge">Engine</span>
+            <span style="color: var(--text-dim); font-size: 0.85rem;" id="modalFileSize">Tamanho</span>
+          </div>
+          <h2 class="modal-title" id="modalTitle">Título do Jogo</h2>
+        </div>
+        
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;" id="modalFullDesc">
+          Descrição completa do jogo...
+        </p>
+        
+        <h4 class="modal-section-title">🎯 Competências e Objetivos Educacionais</h4>
+        <ul id="modalObjectivesList" style="padding-left: 20px; color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+          <!-- Lista de objetivos -->
+        </ul>
+        
+        <h4 class="modal-section-title">🎮 Controles do Jogo</h4>
+        <table class="controls-table">
+          <thead>
+            <tr>
+              <th>Tecla / Comando</th>
+              <th>Ação no Jogo</th>
+            </tr>
+          </thead>
+          <tbody id="modalControlsBody">
+            <!-- Linhas de controle -->
+          </tbody>
+        </table>
+
+        <h4 class="modal-section-title">💾 Como Executar</h4>
+        <p id="modalHowToRun" style="color: var(--text-muted); font-size: 0.9rem; background: var(--bg-surface); padding: 12px 16px; border-radius: var(--radius-sm); border-left: 3px solid var(--primary-light);">
+          Instruções de execução...
+        </p>
+        
+        <div class="modal-actions">
+          <a href="#" target="_blank" rel="noopener" id="modalPlayBtn" class="btn-card-play">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
+            Jogar no Navegador
+          </a>
+          <a href="#" download id="modalDownloadBtn" class="btn-card-download">
+            <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+            Baixar Projeto
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-notice" id="toastNotice">
+    <svg width="20" height="20" fill="none" stroke="#38bdf8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+    <span id="toastText">Download iniciado!</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/games_data.js"></script>
+  <script src="js/interactive_demo.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
